@@ -1,11 +1,11 @@
 # 🏛️ Taiwan Public Libraries RESTful API Hub
 
 <p align="left">
-  <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/FastAPI-0.110.0-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
-  <img src="https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white" />
-  <img src="https://img.shields.io/badge/SQLAlchemy-ORM-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white" />
-  <img src="https://img.shields.io/badge/Swagger-UI%20Interactive-85EA2D?style=for-the-badge&logo=swagger&logoColor=black" />
+  <img src="[https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)" />
+  <img src="[https://img.shields.io/badge/FastAPI-0.110.0-009688?style=for-the-badge&logo=fastapi&logoColor=white](https://img.shields.io/badge/FastAPI-0.110.0-009688?style=for-the-badge&logo=fastapi&logoColor=white)" />
+  <img src="[https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white)" />
+  <img src="[https://img.shields.io/badge/SQLAlchemy-ORM-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white](https://img.shields.io/badge/SQLAlchemy-ORM-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white)" />
+  <img src="[https://img.shields.io/badge/Swagger-UI%20Interactive-85EA2D?style=for-the-badge&logo=swagger&logoColor=black](https://img.shields.io/badge/Swagger-UI%20Interactive-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)" />
 </p>
 
 > 以政府開放資料（Open Data）為基礎，透過現代化後端架構與 AI 輔助開發，打造支援結構化解析、全功能 CRUD 與高親和性 Swagger 互動文件的公共圖書館資訊服務系統。
@@ -36,7 +36,7 @@
 | Area | `area` | String | 所屬行政區 | `大安區` |
 | Address | `address` | String | 據點詳細地址 | `臺北市大安區建國南路二段125號` |
 | TEL | `tel` | String | 連絡電話 | `02-27552823` |
-| URL | `url` | String | 官方資訊連結 | `https://tpml.gov.taipei/` |
+| URL | `url` | String | 官方資訊連結 | `[https://tpml.gov.taipei/](https://tpml.gov.taipei/)` |
 
 ---
 
@@ -49,6 +49,23 @@ open_data_api/
 ├── main.py                # FastAPI 核心服務、ORM 與 CRUD 路由
 ├── test_client.py         # Python 自動化 API Client 測試腳本
 ├── requirements.txt       # 相依環境套件清單
+├── ai_prompts.md          # AI 輔助開發過程紀錄檔
 ├── swagger_ui.png         # Swagger UI 文件執行截圖
 ├── test_result.png        # 自動化測試客戶端執行結果截圖
 └── README.md              # 系統技術規格與說明文件
+
+🚀 執行方式
+1. 安裝套件Bashpip install -r requirements.txt
+2. 啟動 API ServerBashuvicorn main:app --reload
+3. 開啟 Swagger UI開啟瀏覽器直接造訪：👉 [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+4. 執行 API Client 測試保持 Server 運行，開啟另一終端機視窗執行：Bashpython test_client.py
+
+
+## 📡 API Endpoints
+| Method | Endpoint | 功能 |
+|---|---|---|
+| GET | /api/v1/libraries | 查詢圖書館清單 |
+| GET | /api/v1/libraries/{id} | 查詢單筆資料 |
+| POST | /api/v1/libraries | 新增圖書館 |
+| PUT | /api/v1/libraries/{id} | 修改圖書館 |
+| DELETE | /api/v1/libraries/{id} | 刪除圖書館 |
